@@ -1,0 +1,39 @@
+{
+  "features": [
+    "Curricular_units_1st_sem_enrolled",
+    "Curricular_units_1st_sem_evaluations",
+    "Curricular_units_1st_sem_approved",
+    "Curricular_units_1st_sem_grade",
+    "Curricular_units_2nd_sem_enrolled",
+    "Curricular_units_2nd_sem_evaluations",
+    "Curricular_units_2nd_sem_approved",
+    "Curricular_units_2nd_sem_grade",
+    "Tuition_fees_up_to_date",
+    "Debtor",
+    "Scholarship_holder",
+    "Age_at_enrollment",
+    "Gender",
+    "Admission_grade",
+    "Previous_qualification_grade",
+    "Course",
+    "Application_mode"
+  ],
+  "target": "1 = Dropout, 0 = Graduate",
+  "risk_thresholds": {
+    "Tinggi": 0.7,
+    "Sedang": 0.4
+  },
+  "best_params": {
+    "max_depth": null,
+    "max_features": "sqrt",
+    "min_samples_leaf": 3,
+    "n_estimators": 300
+  },
+  "test_metrics": {
+    "accuracy": 0.9174,
+    "precision": 0.8889,
+    "recall": 0.9014,
+    "f1": 0.8951,
+    "roc_auc": 0.9678
+  }
+}
