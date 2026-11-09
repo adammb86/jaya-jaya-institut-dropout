@@ -11,8 +11,18 @@ import pandas as pd
 import streamlit as st
 
 BASE_DIR = Path(__file__).resolve().parent
-MODEL_PATH = BASE_DIR / "model" / "rf_dropout_model.joblib"
-META_PATH = BASE_DIR / "model" / "model_metadata.json"
+
+
+def find_file(name):
+    """Cari file model di folder model/ atau di root proyek."""
+    for path in (BASE_DIR / "model" / name, BASE_DIR / name):
+        if path.exists():
+            return path
+    return BASE_DIR / "model" / name
+
+
+MODEL_PATH = find_file("rf_dropout_model.joblib")
+META_PATH = find_file("model_metadata.json")
 
 COURSE_MAP = {33: "Biofuel Production Technologies", 171: "Animation and Multimedia Design",
               8014: "Social Service (evening)", 9003: "Agronomy", 9070: "Communication Design",
